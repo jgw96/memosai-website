@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memos AI - Automatic Note Taking</title>
+
+    <link rel="icon" href="/assets/64.png" type="image/x-icon" />
+
+    <style>
+      html {
+        background: linear-gradient(117deg, #202020, #6c63ff 71%, #202020 89%);
+        margin: 0;
+        padding: 0;
+
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      body {
+        /* background: #00000005; */
+        margin: 0;
+        background: #ffffffe0;
+        padding: 0;
+      }
+
+      header {
+        padding: 20px;
+      }
+
+      header p {
+        max-width: 60vw;
+      }
+
+      #get-app-block {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      #get-app-block a {
+        background: #6c63ff;
+        color: white;
+        padding: 8px;
+        border-radius: 12px;
+        text-align: center;
+        text-decoration: none;
+        width: 188px;
+        font-weight: bold;
+      }
+
+      h1 {
+        color: #333;
+        font-size: 36px;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+      main {
+        padding: 20px;
+      }
+
+      h2 {
+        color: #333;
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      section {
+        display: grid;
+        column-gap: 20px;
+        grid-template-columns: 1fr 2fr;
+        margin-bottom: 2em;
+        margin-top: 2em;
+        padding: 28px;
+        border-radius: 12px;
+      }
+
+      #intro-div {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        margin-bottom: 88px;
+        gap: 30px;
+      }
+
+      #images {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 30px;
+      }
+
+      img {
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: #0000003b 0px 0px 20px;
+      }
+
+      footer {
+        padding: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #666;
+      }
+
+      @media (max-width: 860px) {
+        #intro-div {
+          display: flex;
+          flex-direction: column-reverse;
+        }
+
+        section {
+          display: flex;
+          flex-direction: column-reverse;
+          padding: 0;
+          gap: 12px;
+        }
+
+        header p {
+          max-width: 100%;
+        }
+
+        #get-app-block a {
+          width: initial;
+        }
+
+        #images {
+          display: flex;
+          /* flex-direction: column; */
+          overflow: hidden;
+          background: transparent;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Memos AI - Automatic Note Taking</h1>
+      <p>
+        The ultimate note-taking app for anyone who hates writing down
+        everything or struggles to keep up with fast-paced lectures.
+      </p>
+    </header>
+    <main>
+      <div id="intro-div">
+        <div>
+          <p>
+            With Memos AI, you can just sit back and listen while the app
+            records, transcribes, and summarizes the key points for you.
+          </p>
+          <p>
+            Memos AI is more than just a voice recorder, it's a smart assistant
+            that helps you learn better and faster.
+          </p>
+
+          <div id="get-app-block">
+            <a href="https://www.memosai.app" target="_blank">
+              Launch the App
+            </a>
+
+            <a href="https://apps.microsoft.com/detail/9pp8dl2qtjsg" target="_blank">
+              Get it from Microsoft
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <img
+            src="https://cdn.glitch.global/ca6c8ee3-64d5-43cc-a1c6-692576c24de7/desktop-new-fluent-light-two.png?v=1713663098341"
+            alt="Memos AI App"
+          />
+        </div>
+      </div>
+
+      <section>
+        <div>
+          <img src="https://cdn.glitch.global/ca6c8ee3-64d5-43cc-a1c6-692576c24de7/using-laptop.png?v=1713663106799" alt="Memos AI App" />
+        </div>
+
+        <div>
+          <h2>Features</h2>
+          <ul>
+            <li>Record lectures, meetings, interviews etc</li>
+            <li>Transcribe audio to text in real-time</li>
+            <li>AI takes notes based on the transcript</li>
+            <li>Summarize key points and highlights</li>
+            <li>Share notes with classmates or colleagues</li>
+            <li>Have your notes read back to you</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <div>
+          <img src="https://cdn.glitch.global/ca6c8ee3-64d5-43cc-a1c6-692576c24de7/robot-taking-notes.png?v=1713663103900" alt="Memos AI App" />
+        </div>
+
+        <div>
+          <h2>How it works</h2>
+          <ol>
+            <li>Open the Memos AI app on your device</li>
+            <li>Tap Start Recording to start recording the audio of the lecture or meeting</li>
+            <li>Thats it! Memos AI will take it from here</li>
+          </ol>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2024 Memos AI. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
