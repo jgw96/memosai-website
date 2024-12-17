@@ -15,7 +15,7 @@ body {
     background: #6c63ff40;
     color: black;
     padding: 12px;
-    border-radius: 12px;
+    border-radius: 8px;
     margin: 12px;
   
     gap: 8px;
@@ -23,7 +23,7 @@ body {
   
   #hero img {
     width: 460px;
-    border-radius: 12px;
+    border-radius: 8px;
   }
   
   #hero p {
@@ -86,7 +86,7 @@ body {
     padding: 0 16px;
     height: 40px;
     min-width: 64px;
-    border-radius: 4px;
+    border-radius: 8px;
     background: #6c63ff;
     color: white;
     display: block;
@@ -198,7 +198,7 @@ body {
     background: #FFFFFF;
     border: 1px solid #000000;
     box-sizing: border-box;
-    border-radius: 4px;
+    border-radius: 8px;
     text-decoration: none;
     color: #000;
     white-space: nowrap;
@@ -298,7 +298,7 @@ body {
     background: #FFFFFF;
     border: 1px solid #000000;
     box-sizing: border-box;
-    border-radius: 4px;
+    border-radius: 8px;
     padding: 0.5rem 1rem;
     transition: 500ms;
   }
