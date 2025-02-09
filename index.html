@@ -1,235 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Memos AI - Automatic Note Taking</title>
 
-    <link rel="icon" href="/assets/64.png" type="image/x-icon" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Memos AI - Automatic Note Taking</title>
 
-    <style>
-      html {
-        background: linear-gradient(117deg, #202020, #6c63ff 71%, #202020 89%);
-        margin: 0;
-        padding: 0;
+  <meta name="description" content="The ultimate note-taking app for anyone who hates writing down everything or struggles to keep up with fast-paced lectures." />
+  <meta name="keywords" content="note-taking, voice recorder, transcribe, summarize, notes, lectures, meetings, interviews" />
+  <meta name="author" content="Memos AI" />
 
-        font-family: monospace;
-      }
+  <link rel="icon" href="/assets/64.png" type="image/x-icon" />
 
-      body {
-        margin: 0;
-        background: white;
-        padding: 0;
-      }
+  <style>
+    html {
+      background: linear-gradient(117deg, #202020, #6c63ff 71%, #202020 89%);
+      margin: 0;
+      padding: 0;
 
-      header {
-        padding: 20px;
-      }
+      font-family: monospace;
+    }
 
-      header p {
-        max-width: 60vw;
-        margin-bottom: 0;
-      }
+    #launch_anchor {
+      margin-bottom: 8px;
+    }
 
-      #get-app-block {
+    body {
+      margin: 0;
+      background: white;
+      padding: 0;
+    }
+
+    header {
+      padding: 20px;
+    }
+
+    header p {
+      max-width: 60vw;
+      margin-bottom: 0;
+    }
+
+    #get-app-block {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    #get-app-block a {
+      background: #6c63ff;
+      color: white;
+      padding: 8px;
+      border-radius: 8px;
+      text-align: center;
+      text-decoration: none;
+      width: 232px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    h1 {
+      color: #333;
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    h2 {
+      color: #333;
+      font-size: 28px;
+      margin-bottom: 10px;
+      margin-top: 0;
+    }
+
+    section {
+      display: grid;
+      column-gap: 20px;
+      grid-template-columns: 1fr 2fr;
+      margin-bottom: 2em;
+      margin-top: 2em;
+      padding: 28px;
+      border-radius: 8px;
+      background: #f4f4fd;
+    }
+
+    #intro-div {
+      display: grid;
+      grid-template-columns: 2fr 2fr;
+      margin-bottom: 33px;
+      gap: 30px;
+    }
+
+    #images {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 30px;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: #0000003b 0px 0px 20px;
+    }
+
+    footer {
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+    }
+
+    ul li,
+    ol li {
+      font-size: 18px;
+    }
+
+    @media (max-width: 860px) {
+      #intro-div {
         display: flex;
-        flex-direction: column;
-        gap: 8px;
-      }
-
-      #get-app-block a {
-        background: #6c63ff;
-        color: white;
-        padding: 8px;
-        border-radius: 8px;
-        text-align: center;
-        text-decoration: none;
-        width: 232px;
-        font-weight: bold;
-        font-size: 18px;
-      }
-
-      h1 {
-        color: #333;
-        font-size: 36px;
-        margin-bottom: 10px;
-      }
-
-      p {
-        font-size: 18px;
-        line-height: 1.5;
-      }
-
-      main {
-        padding: 20px;
-      }
-
-      h2 {
-        color: #333;
-        font-size: 28px;
-        margin-bottom: 10px;
-        margin-top: 0;
+        flex-direction: column-reverse;
       }
 
       section {
-        display: grid;
-        column-gap: 20px;
-        grid-template-columns: 1fr 2fr;
-        margin-bottom: 2em;
-        margin-top: 2em;
-        padding: 28px;
-        border-radius: 8px;
-        background: #f4f4fd;
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 12px;
+        gap: 12px;
       }
 
-      #intro-div {
-        display: grid;
-        grid-template-columns: 2fr 2fr;
-        margin-bottom: 33px;
-        gap: 30px;
+      header p {
+        max-width: 100%;
+      }
+
+      #get-app-block a {
+        width: initial;
       }
 
       #images {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        gap: 30px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        background: transparent;
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: #252428;
+        color: white;
       }
 
-      img {
-        width: 100%;
-        border-radius: 8px;
-        box-shadow: #0000003b 0px 0px 20px;
+      h1,
+      h2 {
+        color: white;
       }
 
-      footer {
-        padding: 20px;
-        text-align: center;
-        font-size: 14px;
-        color: #666;
+      section {
+        background: #34343b;
       }
+    }
+  </style>
+</head>
 
-      ul li, ol li {
-        font-size: 18px;
-      }
+<body>
+  <header>
+    <h1>Memos AI - Automatic Note Taking</h1>
+    <p>
+      The ultimate note-taking app for anyone who hates writing down
+      everything or struggles to keep up with fast-paced lectures.
+    </p>
+  </header>
 
-      @media (max-width: 860px) {
-        #intro-div {
-          display: flex;
-          flex-direction: column-reverse;
-        }
+  <main>
+    <div id="intro-div">
+      <div>
+        <p>
+          With Memos AI, you can just sit back and listen while the app
+          records, transcribes, and summarizes the key points for you.
+          Memos AI is more than just a voice recorder, it's a smart assistant
+          that helps you learn better and faster.
+        </p>
 
-        section {
-          display: flex;
-          flex-direction: column-reverse;
-          padding: 12px;
-          gap: 12px;
-        }
+        <div id="get-app-block">
+          <a id="launch_anchor" href="https://www.memosai.app" target="_blank">
+            Launch the App
+          </a>
 
-        header p {
-          max-width: 100%;
-        }
+          <a href="https://play.google.com/store/apps/details?id=app.memosai.twa" target="_blank">
+            Get It From Google Play
+          </a>
 
-        #get-app-block a {
-          width: initial;
-        }
-
-        #images {
-          display: flex;
-          flex-direction: column;
-          overflow: hidden;
-          background: transparent;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <header>
-      <h1>Memos AI - Automatic Note Taking</h1>
-      <p>
-        The ultimate note-taking app for anyone who hates writing down
-        everything or struggles to keep up with fast-paced lectures.
-      </p>
-    </header>
-    <main>
-      <div id="intro-div">
-        <div>
-          <p>
-            With Memos AI, you can just sit back and listen while the app
-            records, transcribes, and summarizes the key points for you.
-          </p>
-          <p>
-            Memos AI is more than just a voice recorder, it's a smart assistant
-            that helps you learn better and faster.
-          </p>
-
-          <div id="get-app-block">
-            <a href="https://www.memosai.app" target="_blank">
-              Launch the App
-            </a>
-
-            <a href="https://play.google.com/store/apps/details?id=app.memosai.twa" target="_blank">
-              Get it from Google Play
-            </a>
-
-            <a href="https://apps.microsoft.com/detail/9pp8dl2qtjsg" target="_blank">
-              Get it from Microsoft
-            </a>
-          </div>
-        </div>
-
-        <div>
-          <img
-            src="assets/1.png"
-            alt="Memos AI App"
-          />
+          <a href="https://apps.microsoft.com/detail/9pp8dl2qtjsg" target="_blank">
+            Get It From Microsoft
+          </a>
         </div>
       </div>
 
-      <div id="images">
-        <div>
-          <img src="assets/note-light-mobile.png" alt="Memos AI App in light mode on mobile" />
-        </div>
-        <div>
-          <img src="assets/note-light-desktop.png" alt="Memos AI App in light mode on desktop" />
-        </div>
+      <div>
+        <img src="assets/1.png" alt="Memos AI App" />
+      </div>
+    </div>
+
+    <section>
+      <div>
+        <img src="https://cdn.glitch.global/ca6c8ee3-64d5-43cc-a1c6-692576c24de7/using-laptop.png?v=1713663106799"
+          alt="Memos AI App" />
       </div>
 
-      <section>
-        <div>
-          <img src="https://cdn.glitch.global/ca6c8ee3-64d5-43cc-a1c6-692576c24de7/using-laptop.png?v=1713663106799" alt="Memos AI App" />
-        </div>
+      <div>
+        <h2>Features</h2>
+        <ul>
+          <li>Record lectures, meetings, interviews etc</li>
+          <li>Transcribe audio to text in real-time</li>
+          <li>AI takes notes based on the transcript</li>
+          <li>Summarize key points and highlights</li>
+          <li>Share notes with classmates or colleagues</li>
+          <li>Have your notes read back to you</li>
+        </ul>
+      </div>
+    </section>
 
-        <div>
-          <h2>Features</h2>
-          <ul>
-            <li>Record lectures, meetings, interviews etc</li>
-            <li>Transcribe audio to text in real-time</li>
-            <li>AI takes notes based on the transcript</li>
-            <li>Summarize key points and highlights</li>
-            <li>Share notes with classmates or colleagues</li>
-            <li>Have your notes read back to you</li>
-          </ul>
-        </div>
-      </section>
+    <section>
+      <div>
+        <img src="https://cdn.glitch.global/ca6c8ee3-64d5-43cc-a1c6-692576c24de7/robot-taking-notes.png?v=1713663103900"
+          alt="Memos AI App" />
+      </div>
 
-      <section>
-        <div>
-          <img src="https://cdn.glitch.global/ca6c8ee3-64d5-43cc-a1c6-692576c24de7/robot-taking-notes.png?v=1713663103900" alt="Memos AI App" />
-        </div>
+      <div>
+        <h2>How it works</h2>
+        <ol>
+          <li>Open the Memos AI app on your device</li>
+          <li>Tap Start Recording to start recording the audio of the lecture or meeting</li>
+          <li>Thats it! Memos AI will take it from here</li>
+        </ol>
+      </div>
+    </section>
 
-        <div>
-          <h2>How it works</h2>
-          <ol>
-            <li>Open the Memos AI app on your device</li>
-            <li>Tap Start Recording to start recording the audio of the lecture or meeting</li>
-            <li>Thats it! Memos AI will take it from here</li>
-          </ol>
-        </div>
-      </section>
-    </main>
-    <footer>
-      <p>&copy; 2024 Memos AI. All rights reserved.</p>
-    </footer>
-  </body>
+    <div id="images">
+      <div>
+        <img src="assets/note-light-mobile.png" alt="Memos AI App in light mode on mobile" />
+      </div>
+      <div>
+        <img src="assets/note-light-desktop.png" alt="Memos AI App in light mode on desktop" />
+      </div>
+    </div>
+
+  </main>
+  <footer>
+    <p>&copy; 2025 Memos AI. All rights reserved.</p>
+  </footer>
+</body>
+
 </html>
